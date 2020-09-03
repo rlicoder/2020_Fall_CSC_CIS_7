@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Dr. Mark E. Lehr
- * Created on February 13th, 2020, 8:35 AM
+ * Created on Sept 1st, 2020, 8:35 AM
  */
 
 //System Libraries
@@ -15,10 +15,11 @@ using namespace std;
 //Function Prototypes
 char rndDgit();           //Randomly generates digit characters
 void prpLuhn(char[],int); //Prepares the Luhn Sequence
-void Luhn(char[],int);    //Calculate and append the Luhn Digit
 int  cnvrt(char);         //Convert 1 digit char to integer
 char cnvrt(int);          //Convert 1 digit integer to a char
 void output(char[],int);  //Output the sequence as integers
+//Function you are to create
+void Luhn(char[],int);    //Calculate and append the Luhn Digit
 
 int main(int argc, char** argv) {
     //Set the random number seed
@@ -81,6 +82,3 @@ void prpLuhn(char cc[],int n){
 char rndDgit(){
     return rand()%10+48;//Ascii Code for numbers '0'=48 and '9'=57
 }
-
-
-
