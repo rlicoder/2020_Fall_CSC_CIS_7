@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Set the Credit Card size
-    const int SIZE=53;
+    const int SIZE=12;
     char crdCard[SIZE];
     //Prepare for Luhn encoding
     cout<<"A random number created in Prep for Luhn Digit"<<endl;
@@ -38,10 +38,25 @@ int main(int argc, char** argv) {
     
     //Now create a function that fills the last digit
     //using the Luhn Algorithm
+    Luhn(crdCard,SIZE);
     cout<<"The random number with Luhn Encoding, Output Here!"<<endl;
+    cout<<crdCard<<endl;
     
     //Exit Stage Right
     return 0;
+}
+
+void Luhn(char ccc[],int n){
+    int sum=0;
+    for(int i=n-3;i>=0;i-=2){
+        int d2=2*cnvrt(ccc[i]);
+        if(d2>10)d2-=9;
+        sum+=d2;
+    }
+    for(int i=n-4;i>=0;i-=2){
+        sum+=cnvrt(ccc[i]);
+    }
+    ccc[n-2]=cnvrt((sum*9)%10);
 }
 
 void output(char cc[],int n){
