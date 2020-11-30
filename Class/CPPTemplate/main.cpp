@@ -7,6 +7,7 @@
 
 //System Level Libraries
 #include <iostream>   //I/O Library
+#include <cmath>      //Math Library
 using namespace std;  //Library Scope
 
 //User Libraries
@@ -26,6 +27,9 @@ int main(int argc, char** argv){
     //Initialize Variables
     
     //Map inputs to outputs -> i.e. process the inputs
+    cout<<log(9)<<endl;
+    
+    cout<<exp(2.19722)<<endl;
     
     //Display the outputs
     

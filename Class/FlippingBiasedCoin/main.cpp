@@ -9,6 +9,7 @@
 #include <iostream>   //I/O Library
 #include <cstdlib>    //Random Number Generator
 #include <ctime>      //Time Library
+#include <cmath>      //Math Library
 using namespace std;  //Library Scope
 
 //User Libraries
@@ -20,6 +21,7 @@ using namespace std;  //Library Scope
 //Function Prototypes
 bool biasCn(int,int);//Biased Coin Flip
 
+
 //Execution Starts Here
 int main(int argc, char** argv){
     //Set the random number seed
@@ -30,18 +32,18 @@ int main(int argc, char** argv){
     
     //Initialize Variables
     //Create a biased 30% coin -> 3/10
-    num=3;          //Numerator of Probability
-    denom=10;       //Denominator of Probability
+    num=5;          //Numerator of Probability
+    denom=15;       //Denominator of Probability
     counter=0;      //Counter to determine the coin flip odds
     nCnFlip=1000000;//Number of times to flip the coin
     
     //Map inputs to outputs -> i.e. process the inputs
     for(int coinflp=1;coinflp<=nCnFlip;coinflp++){
-        if(biasCn(num,denom))counter++;
+        if(biasCn(num,denom)&&biasCn(num,denom))counter++;
     }
     
     //Display the outputs
-    cout<<"Result = "<<100.0f*num/denom<<"% = "<<100.0f*counter/nCnFlip<<"%"<<endl;
+    cout<<"Result = "<<100.0f*pow((1.0f*num/denom),2)<<"% = "<<100.0f*counter/nCnFlip<<"%"<<endl;
     
     //Clean up - File closing, memory deallocation, etc....
 
